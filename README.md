@@ -17,9 +17,13 @@ Pré-requisitos:
 
 Imagens Docker:
 1. Jupyter-lab + Spark
-    > docker run --name spark -p 4040:4040 -p 8888:8888 -p 8501:8501 -v \<caminho para salvar localmente\>:/home/jovyan/work jupyter/all-spark-notebook
+    ```console
+    docker run --name spark -p 4040:4040 -p 8888:8888 -p 8501:8501 -v \<caminho para salvar localmente\>:/home/jovyan/work jupyter/all-spark-notebook
+    ```
 2. Couchbase
-    > docker run -d --name couchbase -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 -v \<caminho para salvar localmente\>:/opt/couchbase/var couchbase
+    ```console
+    docker run -d --name couchbase -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 -v \<caminho para salvar localmente\>:/opt/couchbase/var couchbase
+    ```
 
 Pacotes Python:
 1. pyspark
@@ -44,4 +48,4 @@ TBD
 
 ## Referências<a name="licensing"></a>
 
-TBD
+Fonte dos dados: https://github.com/henriquepgomide/caRtola
