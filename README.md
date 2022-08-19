@@ -44,7 +44,13 @@ TBD
 
 ### Instruções<a name="instructions"></a>
 
-TBD
+1. Abrir o Jupyter-lab
+    * Inicie a imagem docker `spark`
+    * Abra o terminal da imagem
+    * Execute o seguinte comando e copie o caminho
+        ```console
+        jupyter server list
+        ``` 
 
 ## Referências<a name="licensing"></a>
 
