@@ -10,9 +10,43 @@ def carregar_rodada(rodada):
     
     # Carrega rodada do arquivo CSV
     df = spark.read.csv(f'../data/rodada-{rodada}.csv', header=True)
+    
+    columns = [
+        '`atletas.atleta_id`',
+        '`atletas.rodada_id`',
+        '`atletas.posicao_id`',
+        '`atletas.status_id`',
+        '`atletas.pontos_num`',
+        '`atletas.preco_num`',
+        '`atletas.variacao_num`',
+        '`atletas.media_num`',
+        '`atletas.jogos_num`',
+        '`atletas.minimo_para_valorizar`',
+        '`atletas.apelido`',
+        '`atletas.clube.id.full.name`',
+        '`DE`',
+        '`SG`',
+        '`GS`',
+        '`CA`',
+        '`FD`',
+        '`FF`',
+        '`FS`',
+        '`G`',
+        '`I`',
+        '`PI`',
+        '`DS`',
+        '`FC`',
+        '`A`',
+        '`CV`',
+        '`FT`',
+        '`PP`',
+        '`GC`',
+        '`PS`',
+        '`PC`'
+    ]
 
     # Remove colunas que não serão úteis para a aplicação
-    df = df.drop(*['_c0', 'atletas.clube_id', 'atletas.slug', 'atletas.foto', 'atletas.apelido_abreviado', 'atletas.nome'])
+    df = df.select(columns)
     
     # Renomeia as colunas
     newColumns = [
